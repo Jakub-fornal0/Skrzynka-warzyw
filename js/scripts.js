@@ -12,7 +12,7 @@ function removeItem(i) {
 
 function showShippingForm() {
   var el = document.getElementById("shipping_form");
-  var str = "<div class='summary_head'><h1>Formularz wysyłkowy:</div>";
+  var str = "<div class='summary_head'><h1>Dane do wysyłki:</div>";
   str += "<form  onsubmit='return addShippingInformation()'>";
   str += "<div class='form-floating mb-3'>";
   str += "<input class='form-control' id='name' type='text' />";
@@ -39,6 +39,9 @@ function showShippingForm() {
   str += "<label for='tel'>Numer telefonu</label>";
   str += " <p id='tel_error' style='color:red'></p></div>";
 
+  str += "<div class = 'final_summary'><h3>Podsumowanie:</h3>";
+  str += "<p>Koszt całkowity: ";
+  str += "</div>";
   str += "</form>";
 
   el.innerHTML = str;

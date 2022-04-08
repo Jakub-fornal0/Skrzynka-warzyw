@@ -362,6 +362,7 @@
   width: 97%;
   height: auto;
   margin-top: 10px;
+  padding-bottom: 50px;
   background-color: rgba(19, 19, 19, 0.85);
   box-shadow: 0 0 20px 10px rgba(19, 19, 19, 1);
   text-align: center;
@@ -420,10 +421,10 @@
 .summary {
   width: 97%;
   height: auto;
-  padding-top: 150px;
+  padding-top: 50px;
   padding-bottom: 100px;
-  background-color: rgba(19, 19, 19, 0.85);
-  box-shadow: 0 0 20px 10px rgba(19, 19, 19, 1);
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.85);
   text-align: left;
 }
 
@@ -509,6 +510,14 @@
 .logo2 {
   width: 30px;
 }
+#shipping_form {
+  width: 97%;
+  height: auto;
+  margin-top: 10px;
+  padding-bottom: 50px;
+  background-color: rgba(19, 19, 19, 0.85);
+  box-shadow: 0 0 20px 10px rgba(19, 19, 19, 1);
+}
 
 #shipping_form input {
   width: 60%;
@@ -525,4 +534,18 @@
 
 #shipping_form h1 {
   padding-top: 100px;
+}
+
+.final_summary {
+  padding-top: 50px;
+  padding-left: 40%;
+}
+
+.final_summary h3 {
+  color: #fff;
+}
+
+.final_summary p {
+  color: #fff;
+  padding: 10px;
 }

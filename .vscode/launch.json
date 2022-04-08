@@ -8,7 +8,7 @@
       "type": "pwa-chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "file:///C:/sklep/index.html",
+      "url": "file:///D:/Repozytoria/Skrzynka-warzyw/index.html",
       "webRoot": "${workspaceFolder}"
     }
   ]
