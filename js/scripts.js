@@ -13,7 +13,33 @@ function removeItem(i) {
 function showShippingForm() {
   var el = document.getElementById("shipping_form");
   var str = "<div class='summary_head'><h1>Formularz wysyłkowy:</div>";
-  str = +"<form  onsubmit='return addShippingInformation()'>";
+  str += "<form  onsubmit='return addShippingInformation()'>";
+  str += "<div class='form-floating mb-3'>";
+  str += "<input class='form-control' id='name' type='text' />";
+  str += "<label for='name'>Imię i nazwisko</label>";
+  str += " <p id='name_error' style='color:red'></p></div>";
+
+  str += "<div class='form-floating mb-3'>";
+  str += "<input class='form-control' id='street' type='text' />";
+  str += "<label for='street'>Ulica</label>";
+  str += " <p id='street_error' style='color:red'></p></div>";
+
+  str += "<div class='form-floating mb-3'>";
+  str += "<input class='form-control' id='city' type='text' />";
+  str += "<label for='city'>Miasto</label>";
+  str += " <p id='city_error' style='color:red'></p></div>";
+
+  str += "<div class='form-floating mb-3'>";
+  str += "<input class='form-control' id='city_code' type='text' />";
+  str += "<label for='city_code'>Kod pocztowy</label>";
+  str += " <p id='city_code_error' style='color:red'></p></div>";
+
+  str += "<div class='form-floating mb-3'>";
+  str += "<input class='form-control' id='tel' type='text' />";
+  str += "<label for='tel'>Numer telefonu</label>";
+  str += " <p id='tel_error' style='color:red'></p></div>";
+
+  str += "</form>";
 
   el.innerHTML = str;
 }
