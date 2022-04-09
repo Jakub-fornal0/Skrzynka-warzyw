@@ -543,9 +543,12 @@
 
 .final_summary h3 {
   color: #fff;
+  padding-bottom: 20px;
 }
 
 .final_summary p {
   color: #fff;
-  padding: 10px;
+}
+.space_summary {
+  padding-left: 7%;
 }
