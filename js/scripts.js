@@ -13,47 +13,12 @@ function removeItem(i) {
 function showShippingForm() {
   var basket = JSON.parse(localStorage.getItem("basket"));
   var total = 0;
+
   basket.forEach((element) => {
     total += element.total_price;
   });
-  var el = document.getElementById("shipping_form");
-  var str = "<div class='summary_head'><h1>Dane do wysyłki:</div>";
-  str += "<form  onsubmit='return addShippingInformation()'>";
-  str += "<div class='form-floating mb-3'>";
-  str += "<input class='form-control' id='name' type='text' />";
-  str += "<label for='name'>Imię i nazwisko</label>";
-  str += " <p id='name_error' style='color:red'></p></div>";
 
-  str += "<div class='form-floating mb-3'>";
-  str += "<input class='form-control' id='street' type='text' />";
-  str += "<label for='street'>Ulica</label>";
-  str += " <p id='street_error' style='color:red'></p></div>";
-
-  str += "<div class='form-floating mb-3'>";
-  str += "<input class='form-control' id='city' type='text' />";
-  str += "<label for='city'>Miasto</label>";
-  str += " <p id='city_error' style='color:red'></p></div>";
-
-  str += "<div class='form-floating mb-3'>";
-  str += "<input class='form-control' id='city_code' type='text' />";
-  str += "<label for='city_code'>Kod pocztowy</label>";
-  str += " <p id='city_code_error' style='color:red'></p></div>";
-
-  str += "<div class='form-floating mb-3'>";
-  str += "<input class='form-control' id='tel' type='text' />";
-  str += "<label for='tel'>Numer telefonu</label>";
-  str += " <p id='tel_error' style='color:red'></p></div>";
-
-  str += "<div class = 'final_summary'><h3>Podsumowanie:</h3>";
-  str +=
-    "<p>Koszt całkowity: <span class='space_summary'>" +
-    total +
-    "</span> zł</p>";
-  str += "<p id='insert_name'></p>";
-  str += "<p id='insert_street'></p>";
-  str += "<p id='insert_city'></p>";
-  str += "<p id='insert_city_code'></p>";
-  str += "<p id='insert_tel'></p>";
+  document.getElementById("space_summary").innerHTML = total;
 
   var input_name = document.getElementById("name");
   var input_street = document.getElementById("street");
@@ -67,28 +32,37 @@ function showShippingForm() {
   var insert_city_code = document.getElementById("insert_city_code");
   var insert_tel = document.getElementById("insert_tel");
 
-  if (input_name) {
-    input_name.addEventListener("input", function (e) {
-      insert_name.textContent = e.target.value;
-    });
-  }
+  input_name.addEventListener("input", function (e) {
+    insert_name.innerHTML = e.target.value;
+  });
 
-  str += "</div>";
-  str += "</form>";
+  input_street.addEventListener("input", function (e) {
+    insert_street.innerHTML = e.target.value;
+  });
 
-  el.innerHTML = str;
+  input_city.addEventListener("input", function (e) {
+    insert_city.innerHTML = e.target.value;
+  });
+
+  input_city_code.addEventListener("input", function (e) {
+    insert_city_code.innerHTML = e.target.value;
+  });
+
+  input_tel.addEventListener("input", function (e) {
+    insert_tel.innerHTML = e.target.value;
+  });
 }
 
 function showSummary() {
   var basket = JSON.parse(localStorage.getItem("basket"));
   var el = document.getElementById("basket_summary");
   var el_basket = document.getElementById("count");
-  var shipping = document.getElementById("shipping_form");
   if (basket === null) {
+    document.getElementById("shipping_form").style.display = "none";
     el.innerHTML = "<p>Twój koszyk jest pusty.</p>";
     el_basket.innerHTML = 0;
-    shipping.innerHTML = "";
   } else {
+    document.getElementById("shipping_form").style.display = "block";
     var str = "<table class ='basket_summary_inside'>";
     str +=
       "<tr><td></td><td><b>Lp.</b></td><td><b>Nazwa:</b></td><td><b>Cena:</b></td><td><b>Ilość:</b></td><td><b>Razem:</b></td></tr>";

@@ -28,7 +28,9 @@
     <main class="banner">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-          <img src="assets/logo_transpared.png" class="logo navbar-brand" />
+          <a href="index.html"
+            ><img src="assets/logo_transpared.png" class="logo navbar-brand"
+          /></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -42,18 +44,15 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a href="#">O nas</a></li>
-              <li class="nav-item"><a href="#">Produkty</a></li>
-              <li class="nav-item"><a href="#">Kontakt</a></li>
-              <li class="nav-item"><a href="#">Zamówienie</a></li>
+              <li class="nav-item"><a href="#information">O nas</a></li>
+              <li class="nav-item"><a href="#product_info">Produkty</a></li>
+              <li class="nav-item"><a href="#contact_info">Kontakt</a></li>
+              <li class="nav-item"><a href="order.html">Zamówienie</a></li>
               <li class="nav-item position-relative">
-                <a href="#">
+                <a href="order.html#summary">
                   <span class="badge badge-primary count" id="count"></span>
                   Koszyk
                 </a>
-              </li>
-              <li class="nav-item">
-                <img src="assets/logo_transpared.png" class="logo2" />
               </li>
             </ul>
           </div>
@@ -68,12 +67,14 @@
             <button type="button">
               <a href="order.html">Złóż zamówienie</a>
             </button>
-            <button type="button"><a href="#">Czytaj dalej</a></button>
+            <button type="button">
+              <a href="#information">Czytaj dalej</a>
+            </button>
           </div>
         </div>
       </div>
 
-      <div class="information container-fluid">
+      <div class="information container-fluid" id="information">
         <div class="inf row gx-5 align-items-center">
           <div class="photo col-lg-6">
             <img
@@ -159,7 +160,7 @@
         </div>
       </div>
 
-      <div class="product_info container-fluid">
+      <div class="product_info container-fluid" id="product_info">
         <div class="head_product_info">
           <h1>NASZE PRODUKTY:</h1>
         </div>
@@ -192,7 +193,7 @@
           </div>
         </div>
       </div>
-      <div class="contact_info container-fluid">
+      <div class="contact_info container-fluid" id="contact_info">
         <div class="row">
           <div class="social_media col-lg-4">
             <div class="logo_contact">
@@ -232,16 +233,16 @@
             <h1 class="short_menu_h1">NASZE MENU:</h1>
             <ul>
               <li>
-                <a href="#">O nas</a>
+                <a href="#information">O nas</a>
               </li>
               <li>
-                <a href="#">Produkty</a>
+                <a href="#product_info">Produkty</a>
               </li>
               <li>
-                <a href="#">Kontakt</a>
+                <a href="#contact_info">Kontakt</a>
               </li>
               <li>
-                <a href="#">Zamówienie</a>
+                <a href="order.html">Zamówienie</a>
               </li>
             </ul>
           </div>
