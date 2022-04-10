@@ -594,3 +594,63 @@
 .cancel_button:hover {
   background: #d21404;
 }
+
+.newsletter_input {
+  padding-bottom: 30px;
+}
+
+.newsletter_input input {
+  background-color: rgba(19, 19, 19, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.newsletter_input input:focus {
+  background-color: rgba(19, 19, 19, 0.2);
+  color: #fff;
+}
+
+.newsletter {
+  width: 100%;
+  height: 550px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter_text {
+  text-align: center;
+}
+
+.newsletter_text h1 {
+  font-size: 50px;
+}
+
+.newsletter_text p {
+  margin: 20px auto;
+  padding-bottom: 30px;
+}
+
+.newsletter_text button {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #009688;
+  background: #009688;
+  cursor: pointer;
+  color: #fff;
+  transition: 1s;
+}
+
+.newsletter_text button:hover {
+  transform: scale(1.1);
+}
+
+.newsletter_text a {
+  text-decoration: none;
+  color: #fff;
+}
