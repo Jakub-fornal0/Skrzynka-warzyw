@@ -135,3 +135,13 @@ function addProduct(number) {
   localStorage.setItem("basket", JSON.stringify(basket));
   showSummary();
 }
+
+function clearFinalSummary() {
+  document.getElementById("insert_name").innerHTML = "";
+  document.getElementById("insert_street").innerHTML = "";
+  document.getElementById("insert_city").innerHTML = "";
+  document.getElementById("insert_city_code").innerHTML = "";
+  document.getElementById("insert_tel").innerHTML = "";
+  localStorage.removeItem("basket");
+  showSummary();
+}

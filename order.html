@@ -390,9 +390,15 @@
             <p id="insert_city_code"></p>
             <p id="insert_tel"></p>
           </div>
-          <div class="container-fluid">
-            <button type="button">Anuluj</button>
-            <button type="button">Zamawiam i płacę</button>
+          <div class="final_summary_buttons container-fluid">
+            <button
+              class="cancel_button"
+              type="reset"
+              onclick="clearFinalSummary()"
+            >
+              Anuluj
+            </button>
+            <button class="order_button" type="button">Zamawiam i płacę</button>
           </div>
         </form>
       </div>
