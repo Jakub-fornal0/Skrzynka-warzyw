@@ -19,6 +19,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
+    <script
+      src="https://kit.fontawesome.com/6ecaaaad8d.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <script src="js/scripts_index.js"></script>
@@ -26,7 +31,7 @@
 
   <body>
     <main class="banner">
-      <nav class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
           <a href="index.html"
             ><img src="assets/logo_transpared.png" class="logo navbar-brand"
@@ -51,7 +56,10 @@
               <li class="nav-item position-relative">
                 <a href="order.html#summary">
                   <span class="badge badge-primary count" id="count"></span>
-                  Koszyk
+                  <i
+                    class="fa-solid fa-basket-shopping"
+                    style="font-size: 24px"
+                  ></i>
                 </a>
               </li>
             </ul>
@@ -144,9 +152,9 @@
 
       <div class="product_info container-fluid" id="product_info">
         <div class="head_product_info">
-          <h1>NASZE PRODUKTY:</h1>
+          <h1>NASZE PRODUKTY</h1>
         </div>
-        <div class="product_img row">
+        <div class="product_img row" style="padding-top: 35px">
           <div class="wrap col-lg-6">
             <img class="img" src="assets/zielone.jpg" />
             <div class="overlay_img">
