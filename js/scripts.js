@@ -57,6 +57,12 @@ function showSummary() {
   var basket = JSON.parse(localStorage.getItem("basket"));
   var el = document.getElementById("basket_summary");
   var el_basket = document.getElementById("count");
+  var total = 0;
+
+  basket.forEach((element) => {
+    total += element.total_price;
+  });
+
   if (basket === null) {
     document.getElementById("shipping_form").style.display = "none";
     el.innerHTML = "<p>Twój koszyk jest pusty.</p>";
@@ -83,6 +89,10 @@ function showSummary() {
         basket[i].total_price +
         " zł</td></tr>";
     }
+    str +=
+      "<tr><td></td><td></td><td></td><td></td><td style='font-size: 22px'><b>Razem:</b></td><td style='font-size: 22px'>" +
+      total +
+      " zł</td></tr>";
     str += "</table>";
     el.innerHTML = str;
     el_basket.innerHTML = basket.length;
