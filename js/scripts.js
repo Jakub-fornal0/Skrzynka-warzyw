@@ -59,9 +59,11 @@ function showSummary() {
   var el_basket = document.getElementById("count");
   var total = 0;
 
-  basket.forEach((element) => {
-    total += element.total_price;
-  });
+  if (basket != null) {
+    basket.forEach((element) => {
+      total += element.total_price;
+    });
+  }
 
   if (basket === null) {
     document.getElementById("shipping_form").style.display = "none";
@@ -152,6 +154,6 @@ function clearFinalSummary() {
   document.getElementById("insert_city").innerHTML = "";
   document.getElementById("insert_city_code").innerHTML = "";
   document.getElementById("insert_tel").innerHTML = "";
-  localStorage.removeItem("basket");
+  //localStorage.removeItem("basket");
   showSummary();
 }
