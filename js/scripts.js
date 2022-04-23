@@ -1,7 +1,81 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("../json/products.json")
+  fetch("json/products.json")
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      var myProducts = {};
+      myProducts = data;
+      var products = document.getElementById("products");
+      row = document.createElement("div");
+      row.classList.add("row");
+      products.appendChild(row);
+      for (i = 0; i < myProducts.length; i++) {
+        maindiv = document.createElement("div");
+        maindiv.classList.add("col-lg-4");
+        maindiv.classList.add("col-md-6");
+        maindiv.classList.add("col-sm-6");
+        row.appendChild(maindiv);
+
+        product = document.createElement("div");
+        product.classList.add("product");
+        maindiv.appendChild(product);
+
+        product_image = document.createElement("div");
+        product_image.classList.add("product_image");
+        product.appendChild(product_image);
+
+        img = document.createElement("img");
+        img.src = myProducts[i].img;
+        img.classList.add("img");
+        img.classList.add("img-fluid");
+        product_image.appendChild(img);
+
+        product_description = document.createElement("div");
+        product_description.classList.add("product_description");
+        product.appendChild(product_description);
+
+        h1 = document.createElement("h1");
+        h1.innerHTML = myProducts[i].name;
+        product.appendChild(h1);
+
+        p = document.createElement("p");
+        p.innerHTML = myProducts[i].description;
+        product.appendChild(p);
+
+        p = document.createElement("p");
+        p.innerHTML = "<b>Cena: </b>" + myProducts[i].price + "zł";
+        product.appendChild(p);
+
+        product_buttons = document.createElement("div");
+        product_buttons.classList.add("product_buttons");
+        product_buttons.classList.add("row");
+        product.appendChild(product_buttons);
+
+        quantity = document.createElement("div");
+        quantity.classList.add("quantity");
+        quantity.classList.add("col-lg-6");
+        product_buttons.appendChild(quantity);
+
+        input = document.createElement("input");
+        input.classList.add("product_quantity");
+        input.classList.add("form-control");
+        input.id = myProducts[i].name;
+        input.type = "number";
+        input.min = "1";
+        input.placeholder = "Ilość";
+        quantity.appendChild(input);
+
+        product_button = document.createElement("div");
+        product_button.classList.add("product_button");
+        product_button.classList.add("col-lg-6");
+        product_buttons.appendChild(product_button);
+
+        button = document.createElement("button");
+        button.type = "button";
+        button.innerHTML = "Dodaj";
+        button.setAttribute("onclick", "addProduct(" + (i + 1) + ")");
+        product_button.appendChild(button);
+      }
+    });
   showSummary();
 });
 
@@ -111,10 +185,10 @@ function addProduct(number) {
 
   var item = {};
   var arr_name = [
-    "Zielony koszyk",
-    "Żółty koszyk",
-    "Czerwony koszyk",
-    "Zdrowy koszyk",
+    "Zielona skrzynka",
+    "Żółta skrzynka",
+    "Czerwona skrzynka",
+    "Zdrowa skrzynka",
     "Pomidor",
     "Ogórek",
     "Sałata",
@@ -122,15 +196,15 @@ function addProduct(number) {
     "Rzodkiewka",
   ];
   var arr_id = [
-    "green_basket",
-    "yellow_basket",
-    "red_basket",
-    "healthy_basket",
-    "tomato",
-    "cucumber",
-    "lettuce",
-    "potato",
-    "radish",
+    "Zielona skrzynka",
+    "Żółta skrzynka",
+    "Czerwona skrzynka",
+    "Zdrowa skrzynka",
+    "Pomidor",
+    "Ogórek",
+    "Sałata",
+    "Ziemniaki",
+    "Rzodkiewka",
   ];
   var arr_price = [50, 55, 40, 70, 5, 3, 6, 2, 1];
 
