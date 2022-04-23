@@ -102,12 +102,14 @@ function showShippingForm() {
   var input_city = document.getElementById("city");
   var input_city_code = document.getElementById("city_code");
   var input_tel = document.getElementById("tel");
+  var input_email = document.getElementById("email");
 
   var insert_name = document.getElementById("insert_name");
   var insert_street = document.getElementById("insert_street");
   var insert_city = document.getElementById("insert_city");
   var insert_city_code = document.getElementById("insert_city_code");
   var insert_tel = document.getElementById("insert_tel");
+  var insert_email = document.getElementById("insert_email");
 
   input_name.addEventListener("input", function (e) {
     insert_name.innerHTML = e.target.value;
@@ -127,6 +129,10 @@ function showShippingForm() {
 
   input_tel.addEventListener("input", function (e) {
     insert_tel.innerHTML = e.target.value;
+  });
+
+  input_email.addEventListener("input", function (e) {
+    insert_email.innerHTML = e.target.value;
   });
 }
 
@@ -184,17 +190,6 @@ function addProduct(number) {
   if (basket === null) basket = [];
 
   var item = {};
-  var arr_name = [
-    "Zielona skrzynka",
-    "Żółta skrzynka",
-    "Czerwona skrzynka",
-    "Zdrowa skrzynka",
-    "Pomidor",
-    "Ogórek",
-    "Sałata",
-    "Ziemniaki",
-    "Rzodkiewka",
-  ];
   var arr_id = [
     "Zielona skrzynka",
     "Żółta skrzynka",
@@ -213,7 +208,7 @@ function addProduct(number) {
     alert("Za mała ilość.");
     return false;
   } else {
-    item.name = arr_name[number - 1];
+    item.name = arr_id[number - 1];
     item.quantity = quantity;
     item.price = arr_price[number - 1];
     item.total_price = quantity * arr_price[number - 1];
@@ -231,6 +226,92 @@ function clearFinalSummary() {
   document.getElementById("insert_city").innerHTML = "";
   document.getElementById("insert_city_code").innerHTML = "";
   document.getElementById("insert_tel").innerHTML = "";
+  document.getElementById("insert_email").innerHTML = "";
   //localStorage.removeItem("basket");
   showSummary();
+}
+
+function checkField(field, regex) {
+  var fieldToCheck = document.getElementById(field);
+  if (!regex.test(fieldToCheck.value)) return false;
+  else return true;
+}
+
+function checkData() {
+  var correctData = true;
+  regTel = /^[_0-9]{9}$/;
+  regEmail =
+    /^([a-zA-Z0-9])+([.a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-]+)+/;
+  regCityCode = /^[_0-9]{2}-[_0-9]{3}$/;
+
+  if (document.getElementById("name").value === "") {
+    correctData = false;
+    document.getElementById("name_error").innerHTML =
+      "Pole nie może być puste.";
+  } else {
+    document.getElementById("name_error").innerHTML = "";
+  }
+
+  if (document.getElementById("street").value === "") {
+    correctData = false;
+    document.getElementById("street_error").innerHTML =
+      "Pole nie może być puste.";
+  } else {
+    document.getElementById("street_error").innerHTML = "";
+  }
+
+  if (document.getElementById("city").value === "") {
+    correctData = false;
+    document.getElementById("city_error").innerHTML =
+      "Pole nie może być puste.";
+  } else {
+    document.getElementById("city_error").innerHTML = "";
+  }
+
+  if (!checkField("city_code", regCityCode)) {
+    correctData = false;
+    document.getElementById("city_code_error").innerHTML =
+      "Podaj kod pocztowy w formacie xx-xxx.";
+  } else {
+    document.getElementById("city_code_error").innerHTML = "";
+  }
+
+  if (!checkField("tel", regTel)) {
+    correctData = false;
+    document.getElementById("tel_error").innerHTML =
+      "Podaj numer w formacie xxxxxxxxx";
+  } else {
+    document.getElementById("tel_error").innerHTML = "";
+  }
+
+  if (!checkField("email", regEmail)) {
+    correctData = false;
+    document.getElementById("email_error").innerHTML =
+      "Podaj email w formacie xx@xx.xx";
+  } else {
+    document.getElementById("email_error").innerHTML = "";
+  }
+
+  return correctData;
+}
+
+function order() {
+  if (checkData()) {
+    var order = {};
+    order.name = document.getElementById("name").value;
+    order.street = document.getElementById("street").value;
+    order.city = document.getElementById("city").value;
+    order.city_code = document.getElementById("city_code").value;
+    order.tel = document.getElementById("tel").value;
+    order.email = document.getElementById("email").value;
+
+    var orderData = JSON.parse(localStorage.getItem("orderData"));
+    if (orderData === null) orderData = [];
+    orderData.push(order);
+    localStorage.setItem("orderData", JSON.stringify(orderData));
+    document.getElementById("summary").style.display = "none";
+    document.getElementById("shipping_form").innerHTML =
+      "<h1 style='color: #fff; text-align: center;'>Dziękujemy za złożenie zamówienia.</h1>";
+    localStorage.removeItem("basket");
+  } else return false;
 }

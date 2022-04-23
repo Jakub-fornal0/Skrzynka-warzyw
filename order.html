@@ -84,58 +84,66 @@
 
       <div id="shipping_form" class="container-fluid">
         <div class="summary_head"><h1>Dane do wysyłki:</h1></div>
-        <form>
-          <div class="form-floating mb-3">
-            <input class="form-control" id="name" type="text" required />
-            <label for="name">Imię i nazwisko</label>
-            <p id="name_error" style="color: red"></p>
-          </div>
 
-          <div class="form-floating mb-3">
-            <input class="form-control" id="street" type="text" required />
-            <label for="street">Ulica</label>
-            <p id="street_error" style="color: red"></p>
-          </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="name" type="text" />
+          <label for="name">Imię i nazwisko</label>
+          <p id="name_error" style="color: #ff4033"></p>
+        </div>
 
-          <div class="form-floating mb-3">
-            <input class="form-control" id="city" type="text" required />
-            <label for="city">Miasto</label>
-            <p id="city_error" style="color: red"></p>
-          </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="street" type="text" />
+          <label for="street">Ulica</label>
+          <p id="street_error" style="color: #ff4033"></p>
+        </div>
 
-          <div class="form-floating mb-3">
-            <input class="form-control" id="city_code" type="text" required />
-            <label for="city_code">Kod pocztowy</label>
-            <p id="city_code_error" style="color: red"></p>
-          </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="city" type="text" />
+          <label for="city">Miasto</label>
+          <p id="city_error" style="color: #ff4033"></p>
+        </div>
 
-          <div class="form-floating mb-3">
-            <input class="form-control" id="tel" type="text" required />
-            <label for="tel">Numer telefonu</label>
-            <p id="tel_error" style="color: red"></p>
-          </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="city_code" type="text" />
+          <label for="city_code">Kod pocztowy</label>
+          <p id="city_code_error" style="color: #ff4033"></p>
+        </div>
 
-          <div class="final_summary">
-            <h3>Podsumowanie:</h3>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="tel" type="text" />
+          <label for="tel">Numer telefonu</label>
+          <p id="tel_error" style="color: #ff4033"></p>
+        </div>
 
-            <p><b>Koszt całkowity: </b><span id="space_summary"></span> zł</p>
-            <p id="insert_name"></p>
-            <p id="insert_street"></p>
-            <p id="insert_city"></p>
-            <p id="insert_city_code"></p>
-            <p id="insert_tel"></p>
-          </div>
-          <div class="final_summary_buttons container-fluid">
-            <button
-              class="cancel_button"
-              type="reset"
-              onclick="clearFinalSummary()"
-            >
-              Anuluj
-            </button>
-            <button class="order_button" type="button">Zamawiam i płacę</button>
-          </div>
-        </form>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="email" type="text" />
+          <label for="email">Email</label>
+          <p id="email_error" style="color: #ff4033"></p>
+        </div>
+
+        <div class="final_summary">
+          <h3>Podsumowanie:</h3>
+
+          <p><b>Koszt całkowity: </b><span id="space_summary"></span> zł</p>
+          <p id="insert_name"></p>
+          <p id="insert_street"></p>
+          <p id="insert_city"></p>
+          <p id="insert_city_code"></p>
+          <p id="insert_tel"></p>
+          <p id="insert_email"></p>
+        </div>
+        <div class="final_summary_buttons container-fluid">
+          <button
+            class="cancel_button"
+            type="reset"
+            onclick="clearFinalSummary()"
+          >
+            Anuluj
+          </button>
+          <button class="order_button" type="button" onclick="order()">
+            Zamawiam i płacę
+          </button>
+        </div>
       </div>
 
       <div class="contact_info container-fluid">
