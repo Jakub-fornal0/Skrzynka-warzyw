@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "name": "Zielona skrzynka",
+      "img": "assets/zielone.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 50
+    },
+    {
+      "name": "Żółta skrzynka",
+      "img": "assets/zolte.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 55
+    },
+    {
+      "name": "Czerwona skrzynka",
+      "img": "assets/czerwone.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 40
+    },
+    {
+      "name": "Zdrowa skrzynka",
+      "img": "assets/pomaranczowe.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 70
+    },
+    {
+      "name": "Pomidor",
+      "img": "assets/zielone.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 5
+    },
+    {
+      "name": "Ogórek",
+      "img": "assets/zolte.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 3
+    },
+    {
+      "name": "Sałata",
+      "img": "assets/czerwone.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 6
+    },
+    {
+      "name": "Ziemniaki",
+      "img": "assets/pomaranczowe.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 2
+    },
+    {
+      "name": "Rzodkiewka",
+      "img": "assets/zielone.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio aenean sed adipiscing diam donec.",
+      "price": 1
+    }
+  ]
+}

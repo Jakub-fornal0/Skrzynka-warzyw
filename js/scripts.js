@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  fetch("../json/products.json")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
   showSummary();
 });
 
